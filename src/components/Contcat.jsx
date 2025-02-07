@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import { FaUser, FaEnvelope, FaPaperPlane, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa"; // Icons for form fields and contact details
-import { FaShoppingCart, FaMobileAlt, FaDesktop, FaCode, FaSearch, FaPaintBrush, FaChartLine } from "react-icons/fa"; // Icons for solve-problem list
-import "../assets/Contact.css"; // Make sure to create a CSS file for styling
+import { FaUser, FaEnvelope, FaPaperPlane, FaPhoneAlt, FaRegEnvelope } from "react-icons/fa";
+import { FaShoppingCart, FaMobileAlt, FaDesktop, FaCode, FaSearch, FaPaintBrush, FaChartLine } from "react-icons/fa";
+import "../assets/Contact.css";
 
 function Contact() {
   const [formData, setFormData] = useState({
@@ -9,8 +9,6 @@ function Contact() {
     email: "",
     message: "",
   });
-
-  const [hoverEffect, setHoverEffect] = useState("");
 
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -28,60 +26,39 @@ function Contact() {
 
   return (
     <section className="contact" id="contact">
+    <div className="contact-title-wrapper">
+      <span className="title-decorator"></span>
       <h2 className="contact-title">Contact Me</h2>
-      <hr className="horizontal-line" />
+      <span className="title-decorator"></span>
+    </div>
+    {/* ... rest of your content ... */}
+
+
       <div className="contact-container">
-        {/* Solve Problem Section */}
-        <div className="solve-problem">
-          <h3 className="h">Let's Solve Problems with Digital Solutions</h3>
-
-          {/* <ul className="solve-list">
-            <li><FaShoppingCart className="icon" /> e-Commerce Solutions</li>
-            <li><FaMobileAlt className="icon" /> Mobile App Development</li>
-            <li><FaDesktop className="icon" /> Website Development</li>
-            <li><FaCode className="icon" /> Custom Software Development</li>
-            <li><FaSearch className="icon" /> Search Engine Optimization (SEO)</li>
-            <li><FaPaintBrush className="icon" /> UI/UX Design Services</li>
-            <li><FaChartLine className="icon" /> Data Analytics & Business Intelligence</li>
-          </ul> */}
-        </div>
-
-        {/* Contact Details and Form */}
-        <div 
-          className={`contact-left ${hoverEffect}`}
-          onMouseEnter={() => setHoverEffect("magic-hover")}
-          onMouseLeave={() => setHoverEffect("")}
-        >
+        {/* Left Column - Photo & Contact Info */}
+        <div className="contact-left">
           <img 
             src="/assets/images/my1.png"
             alt="Contact" 
             className="contact-image"
           />
-
           <div className="contact-info">
-            <p>
-              <button
-                className="phone-button"
-                onClick={() => window.location.href = "tel:0988540393"}
-              >
-                <FaPhoneAlt className="icon" /> +251988540393/712177404
-              </button>
-            </p>
-
-            <p>
-              <button
-                className="email-button"
-                onClick={() => window.location.href = "mailto:mulusewwube0@gmail.com"}
-              >
-                <FaRegEnvelope className="icon" /> mulusewwube0@gmail.com
-              </button>
-            </p>
+            <button
+              className="phone-button"
+              onClick={() => window.location.href = "tel:0988540393"}
+            >
+              <FaPhoneAlt className="icon" /> +251988540393/712177404
+            </button>
+            <button
+              className="email-button"
+              onClick={() => window.location.href = "mailto:mulusewwube0@gmail.com"}
+            >
+              <FaRegEnvelope className="icon" /> mulusewwube0@gmail.com
+            </button>
           </div>
         </div>
 
-        {/* Vertical line between the sections */}
-        <div className="vertical-line"></div>
-
+        {/* Right Column - Contact Form */}
         <div className="contact-right">
           <form className="contact-form" onSubmit={handleSubmit}>
             <div className="form-group">
@@ -126,10 +103,24 @@ function Contact() {
               ></textarea>
             </div>
             <button type="submit" className="submit-btn">
-              <FaPaperPlane className="icon animated-icon" /> Send
+              <FaPaperPlane className="icon" /> Send Message
             </button>
           </form>
         </div>
+      </div>
+
+      {/* Solve Problem Section */}
+      <div className="solve-problem">
+        <h3>Let's Solve Problems with Digital Solutions</h3>
+        <ul className="solve-list">
+          <li><FaShoppingCart className="icon" /> e-Commerce Solutions</li>
+          <li><FaMobileAlt className="icon" /> Mobile App Development</li>
+          <li><FaDesktop className="icon" /> Website Development</li>
+          <li><FaCode className="icon" /> Custom Software Development</li>
+          <li><FaSearch className="icon" /> Search Engine Optimization (SEO)</li>
+          <li><FaPaintBrush className="icon" /> UI/UX Design Services</li>
+          <li><FaChartLine className="icon" /> Data Analytics & Business Intelligence</li>
+        </ul>
       </div>
     </section>
   );

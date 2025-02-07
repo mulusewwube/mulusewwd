@@ -1,57 +1,60 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { SunIcon, MoonIcon, Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSun, faMoon, faBars, faTimes } from '@fortawesome/free-solid-svg-icons';
 import "../assets/Header.css";
 
 const Header = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const [showHeader, setShowHeader] = useState(true);
+  const [lastScrollY, setLastScrollY] = useState(0);
+  const [isDarkTheme, setIsDarkTheme] = useState(false);
 
-  const toggleMenu = () => {
-    setIsOpen(!isOpen);
+  const toggleMenu = () => setIsOpen(!isOpen);
+  const toggleTheme = () => setIsDarkTheme(!isDarkTheme);
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+    setShowHeader(currentScrollY < lastScrollY || currentScrollY < 50);
+    setLastScrollY(currentScrollY);
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [lastScrollY]);
+
   return (
-    <header className="portfolio-header">
+    <header className={`portfolio-header ${showHeader ? "visible" : "hidden"} ${isDarkTheme ? "dark" : ""}`}>
       <div className="container">
-        {/* Logo Section */}
         <div className="logo">
           <h1>
-            <a href="/">Mulusew</a>
+            <a href="/">M<span>ulusew</span></a>
           </h1>
         </div>
 
-        {/* Theme Toggle Button */}
-        <button className="theme-toggle" onClick={() => alert('Theme toggled!')}>
-          <span className="theme-icon">🌙</span>
-        </button>
+        <div className="header-controls">
+          <button className="theme-toggle" onClick={toggleTheme}>
+            <FontAwesomeIcon icon={isDarkTheme ? faSun : faMoon} />
+          </button>
 
-        {/* Hamburger Menu Button */}
-        <button className={`menu-toggle ${isOpen ? "open" : ""}`} onClick={toggleMenu}>
-          <span className="menu-icon" />
-        </button>
+          <button className="menu-toggle" onClick={toggleMenu}>
+            <FontAwesomeIcon icon={isOpen ? faTimes : faBars} />
+          </button>
+        </div>
 
-        {/* Navigation Menu */}
         <nav className={`navigation ${isOpen ? "open" : ""}`}>
           <ul>
-            <li>
-              <a href="#about" onClick={() => setIsOpen(false)}>About</a>
-            </li>
-            <li>
-              <a href="#projects" onClick={() => setIsOpen(false)}>Projects</a>
-            </li>
-            <li>
-              <a href="#skills" onClick={() => setIsOpen(false)}>Skills</a>
-            </li>
-            <li>
-              <a href="#contact" onClick={() => setIsOpen(false)}>Contact</a>
-            </li>
+            {['About', 'Projects', 'Skills', 'Contact'].map((item) => (
+              <li key={item}>
+                <a href={`#${item.toLowerCase()}`} onClick={() => setIsOpen(false)}>
+                  <span>0{item}</span>
+                  {item}
+                </a>
+              </li>
+            ))}
           </ul>
         </nav>
-      </div>
-
-      {/* Magic Design Animation */}
-      <div className="magic-design">
-        <div className="circle one" />
-        <div className="circle two" />
-        <div className="circle three" />
       </div>
     </header>
   );

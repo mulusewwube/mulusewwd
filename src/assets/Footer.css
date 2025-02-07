@@ -1,29 +1,75 @@
 /* Footer Styles */
 .footer {
-  background-color:#2C2A6E;
-  color: #fff;
-  text-align: center;
-  padding: 20px 10px;
-  margin-top: 20px;
-  box-shadow: 0 -4px 6px rgba(0, 0, 0, 0.1);
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  width: 100%;
+  position: relative;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  padding: 1.5rem 2rem;
+  border-top: 3px solid var(--accent-color);
+  transition: var(--transition);
+}
+
+.dark .footer {
+  background: rgba(45, 52, 54, 0.95);
+  border-top-color: rgba(255, 255, 255, 0.05);
 }
 
 .footer p {
+  text-align: center;
   margin: 0;
+  font-family: 'Inter', sans-serif;
   font-size: 0.9rem;
-  color: #ccc;
+  color: var(--primary-color);
+  transition: var(--transition);
+}
+
+.dark .footer p {
+  color: var(--text-light);
 }
 
 .footer a {
-  color: #f39c12;
+  color: var(--accent-color);
   text-decoration: none;
-  transition: color 0.3s ease;
+  position: relative;
+  transition: var(--transition);
+}
+
+.footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: var(--accent-color);
+  transition: var(--transition);
+}
+
+.footer a:hover::after {
+  width: 100%;
 }
 
 .footer a:hover {
-  color: #fff;
+  color: var(--primary-color);
+}
+
+.dark .footer a:hover {
+  color: var(--text-light);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1rem;
+  }
+  
+  .footer p {
+    font-size: 0.8rem;
+    line-height: 1.4;
+  }
+}
+
+@media (max-width: 480px) {
+  .footer p {
+    font-size: 0.7rem;
+  }
 }

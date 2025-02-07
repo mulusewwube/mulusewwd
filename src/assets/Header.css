@@ -1,8 +1,13 @@
-/* General Styles */
-body {
-  margin: 0;
-  font-family: 'Arial', sans-serif;
-  color: #333;
+/* Base Styles */
+
+:root {
+  --primary-color: #2d3436;
+  --accent-color: #05c4ca;
+  --light-bg: #ffffff;
+  --dark-bg: #2d3436;
+  --text-light: #ffffff;
+  --text-dark: #2d3436;
+  --transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
 }
 
 .portfolio-header {
@@ -10,222 +15,179 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  background: transparent;
-  padding: 10px 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  transition: var(--transition);
+  border-bottom: 5px solid#05c4ca;
+}
+
+.portfolio-header.dark {
+  background: rgba(45, 52, 54, 0.95);
+  border-bottom-color: rgba(255, 255, 255, 0.05);
 }
 
 .container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
 }
 
+/* Logo Styles */
 .logo h1 a {
-  color: #333;
-  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
   font-size: 1.8rem;
-  font-weight: bold;
-  transition: color 0.3s ease;
+  color: var(--primary-color);
+  text-decoration: none;
+  transition: var(--transition);
 }
 
-.logo h1 a:hover {
-  color: #05c4ca;
+.logo h1 a span {
+  font-weight: 300;
 }
 
-/* Theme Toggle Button */
-.theme-toggle {
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  color: #333;
-  font-size: 1.2rem;
-  margin-right: 10px;
-  transition: transform 0.3s ease, color 0.3s ease;
+.dark .logo h1 a {
+  color: var(--text-light);
 }
 
-.theme-toggle:hover {
-  transform: scale(1.1);
-  color: #05c4ca;
-}
-
-/* Hamburger Menu Button */
-.menu-toggle {
-  display: none;
-  background: transparent;
-  border: none;
-  cursor: pointer;
-  position: relative;
-  width: 30px;
-  height: 30px;
-}
-
-.menu-toggle .menu-icon {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 25px;
-  height: 3px;
-  background: #333;
-  transition: all 0.3s ease;
-  transform: translate(-50%, -50%);
-}
-
-.menu-toggle.open .menu-icon {
-  transform: translate(-50%, -50%) rotate(45deg);
-}
-
-.menu-toggle.open .menu-icon::before,
-.menu-toggle.open .menu-icon::after {
-  transform: rotate(90deg);
-}
-
-.menu-toggle .menu-icon::before,
-.menu-toggle .menu-icon::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background: #333;
-  transition: transform 0.3s ease;
-}
-
-.menu-toggle .menu-icon::before {
-  transform: translateY(-8px);
-}
-
-.menu-toggle .menu-icon::after {
-  transform: translateY(8px);
-}
-
-/* Navigation Menu */
-.navigation {
-  display: flex;
-  gap: 20px;
-  list-style: none;
-  align-items: center;
-  margin: 0;
-  padding: 0;
-}
-
+/* Navigation Styles */
 .navigation ul {
   display: flex;
-  gap: 20px;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
 }
 
 .navigation a {
-  color: #333;
-  text-decoration: none;
-  font-size: 1rem;
-  padding: 5px 10px;
   position: relative;
-  transition: color 0.3s ease;
+  text-decoration: none;
+  color: var(--text-dark);
+  font-family: 'Inter', sans-serif;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  transition: var(--transition);
 }
 
-/* Add Bottom Line on Hover */
+.dark .navigation a {
+  color: var(--text-light);
+}
+
+.navigation a span {
+  position: absolute;
+  left: -1.2rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: var(--accent-color);
+  opacity: 0;
+  transition: var(--transition);
+}
+
+.navigation a:hover span {
+  opacity: 1;
+  left: -1.5rem;
+}
+
 .navigation a::after {
-  content: "";
+  content: '';
   position: absolute;
   bottom: 0;
-  left: 50%;
+  left: 0;
   width: 0;
   height: 2px;
-  background: #05c4ca;
-  transition: width 0.3s ease, left 0.3s ease;
+  background: var(--accent-color);
+  transition: var(--transition);
 }
 
 .navigation a:hover::after {
   width: 100%;
-  left: 0;
 }
 
-.navigation a:hover {
-  color: #05c4ca;
+/* Header Controls */
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
 }
+
+.theme-toggle, .menu-toggle {
+  background: none;
+  border: none;
+  color: var(--primary-color);
+  font-size: 1.2rem;
+  cursor: pointer;
+  padding: 0.5rem;
+  transition: var(--transition);
+}
+
+.dark .theme-toggle, .dark .menu-toggle {
+  color: var(--text-light);
+}
+
+.theme-toggle:hover, .menu-toggle:hover {
+  color: var(--accent-color);
+  transform: scale(1.1);
+}
+
+@media (min-width: 769px) {
+  .menu-toggle {
+    display: none;
+  }
+}
+
 
 /* Mobile Styles */
-@media screen and (max-width: 768px) {
-  .menu-toggle {
-    display: block;
+@media (max-width: 768px) {
+  .container {
+    padding: 1rem;
   }
 
   .navigation {
-    position: absolute;
-    top: 60px;
-    right: 0;
-    background: rgba(255, 255, 255, 0.9);
-    width: 200px;
+    position: fixed;
+    top: 4.5rem;
+    right: -100%;
+    width: 100%;
+    height: 50vh; /* Updated height */
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(10px);
     flex-direction: column;
-    align-items: flex-start;
-    gap: 0;
-    padding: 10px 20px;
-    display: none;
-    border-radius: 8px;
+    padding: 2rem;
+    transition: var(--transition);
+  }
+  
+
+  .dark .navigation {
+    background: rgba(45, 52, 54, 0.98);
   }
 
   .navigation.open {
-    display: flex;
+    right: 0;
   }
 
   .navigation ul {
     flex-direction: column;
-    gap: 10px;
+    gap: 1.5rem;
+  }
+
+  .navigation a {
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+  }
+
+  .menu-toggle {
+    display: block;
   }
 }
 
-/* Magic Design Animation */
-.magic-design {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  overflow: hidden;
-  pointer-events: none;
+/* Header Visibility */
+.portfolio-header.hidden {
+  transform: translateY(-100%);
 }
 
-.magic-design .circle {
-  position: absolute;
-  border-radius: 50%;
-  opacity: 0.3;
-  animation: float 10s infinite;
-}
-
-.magic-design .circle.one {
-  width: 150px;
-  height: 150px;
-  background: #05c4ca;
-  top: 20%;
-  left: 10%;
-}
-
-.magic-design .circle.two {
-  width: 100px;
-  height: 100px;
-  background: #ffcc00;
-  top: 50%;
-  left: 70%;
-}
-
-.magic-design .circle.three {
-  width: 200px;
-  height: 200px;
-  background: #ff4500;
-  top: 80%;
-  left: 30%;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0px);
-  }
-  50% {
-    transform: translateY(-20px);
-  }
-  100% {
-    transform: translateY(0px);
-  }
+.portfolio-header.visible {
+  transform: translateY(0);
 }

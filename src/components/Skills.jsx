@@ -1,12 +1,11 @@
 import React from "react";
-import "../assets/Skills.css"; // Ensure the CSS file has the corresponding styles
-import { FaCode, FaPaintBrush } from "react-icons/fa";
-import { AiOutlineHtml5, AiFillGithub } from "react-icons/ai";
+import "../assets/Skills.css";
+import { FaCode, FaPaintBrush, FaMicrosoft, FaRegLightbulb } from "react-icons/fa";
+import { AiOutlineHtml5 } from "react-icons/ai";
 import { DiCss3, DiJavascript1, DiReact } from "react-icons/di";
 import { FiFigma } from "react-icons/fi";
 import { SiAdobeillustrator, SiAdobephotoshop, SiDjango, SiBootstrap, SiCanva } from "react-icons/si";
 import { RiFileWord2Fill, RiFileExcel2Fill, RiFilePpt2Fill } from "react-icons/ri";
-import { FaMicrosoft, FaRegLightbulb } from "react-icons/fa";
 
 function Skills() {
   const skillsData = [
@@ -14,95 +13,90 @@ function Skills() {
       category: "Technical Skills",
       icon: <FaCode className="category-icon" />,
       skills: [
-        { name: "HTML", level: 90, icon: <AiOutlineHtml5 className="skill-icon" /> },
-        { name: "CSS", level: 85, icon: <DiCss3 className="skill-icon" /> },
-        { name: "JavaScript", level: 80, icon: <DiJavascript1 className="skill-icon" /> },
-        { name: "React", level: 75, icon: <DiReact className="skill-icon" /> },
-        { name: "Django", level: 70, icon: <SiDjango className="skill-icon" /> },
-        { name: "Bootstrap", level: 80, icon: <SiBootstrap className="skill-icon" /> },
+        { name: "HTML", level: 90, icon: <AiOutlineHtml5 /> },
+        { name: "CSS", level: 85, icon: <DiCss3 /> },
+        { name: "JavaScript", level: 80, icon: <DiJavascript1 /> },
+        { name: "React", level: 75, icon: <DiReact /> },
+        { name: "Django", level: 70, icon: <SiDjango /> },
+        { name: "Bootstrap", level: 80, icon: <SiBootstrap /> },
       ],
     },
     {
       category: "Design Skills",
       icon: <FaPaintBrush className="category-icon" />,
       skills: [
-        { name: "Figma", level: 90, icon: <FiFigma className="skill-icon" /> },
-        { name: "Adobe Illustrator", level: 85, icon: <SiAdobeillustrator className="skill-icon" /> },
-        { name: "Adobe Photoshop", level: 80, icon: <SiAdobephotoshop className="skill-icon" /> },
-        { name: "UI/UX Design", level: 85, icon: <AiFillGithub className="skill-icon" /> },
-        { name: "Canva", level: 85, icon: <SiCanva className="skill-icon" /> },
+        { name: "Figma", level: 90, icon: <FiFigma /> },
+        { name: "Adobe Illustrator", level: 85, icon: <SiAdobeillustrator /> },
+        { name: "Adobe Photoshop", level: 80, icon: <SiAdobephotoshop /> },
+        { name: "UI/UX Design", level: 85, icon: <FiFigma /> },
+        { name: "Canva", level: 85, icon: <SiCanva /> },
       ],
     },
     {
-      category: "Other Skills",
+      category: "Office Suite",
       icon: <FaMicrosoft className="category-icon" />,
       skills: [
-        { name: "Word", level: 95, icon: <RiFileWord2Fill className="skill-icon" /> },
-        { name: "Excel", level: 90, icon: <RiFileExcel2Fill className="skill-icon" /> },
-        { name: "PowerPoint", level: 85, icon: <RiFilePpt2Fill className="skill-icon" /> },
-        { name: "Publisher", level: 80, icon: <FaMicrosoft className="skill-icon" /> },
+        { name: "Word", level: 95, icon: <RiFileWord2Fill /> },
+        { name: "Excel", level: 90, icon: <RiFileExcel2Fill /> },
+        { name: "PowerPoint", level: 85, icon: <RiFilePpt2Fill /> },
+        { name: "Publisher", level: 80, icon: <FaMicrosoft /> },
       ],
     },
   ];
 
   return (
     <section className="skills" id="skills">
-      <div className="skills-background">
-        {skillsData.map((category, catIndex) =>
-          category.skills.map((skill, skillIndex) => (
-            <div
-              key={`background-skill-${catIndex}-${skillIndex}`}
-              className="background-skill-icon"
-              style={{
-                animationDuration: `${Math.random() * 5 + 10}s`, // Randomized duration for smooth animation
-                animationDelay: `${Math.random() * 5}s`, // Randomized delay for each icon
-              }}
-            >
-              {skill.icon}
-            </div>
-          ))
-        )}
-        <div
-          className="background-problem-solving-icon"
-          style={{
-            animationDuration: "15s",
-            animationDelay: "3s",
-          }}
-        >
-          <FaRegLightbulb className="problem-solving-icon" />
-        </div>
-      </div>
-      <h2 className="skill-title" >My Skills</h2>
-      <hr className="horizontal-line" />
-      <div className="skills-container">
-        {skillsData.map((category, index) => (
-          <div className="skills-category" key={index}>
-            <h3 className="category-title">
-              {category.icon} {category.category}
-            </h3>
-            <ul className="skills-list">
-              {category.skills.map((skill, index) => (
-                <li className="skill-item" key={index}>
-                  <div className="skill-header">
-                    {skill.icon}
-                    <span className="skill-name">{skill.name}</span>
-                  </div>
-                  <div className="skill-bar-container">
-                    <div
-                      className="skill-bar"
-                      style={{
-                        width: `${skill.level}%`,
-                        transition: "width 1s ease-in-out, background-color 0.5s ease",
-                        backgroundColor: `hsl(${skill.level}, 70%, 50%)`,
-                      }}
-                    ></div>
-                  </div>
-                  <div className="skill-level">{skill.level}%</div>
-                </li>
-              ))}
-            </ul>
+      <div className="background-particles">
+        {skillsData.flatMap((category) => category.skills).map((skill, index) => (
+          <div
+            key={`particle-${index}`}
+            className="skill-particle"
+            style={{
+              left: `${Math.random() * 100}%`,
+              top: `${Math.random() * 100}%`,
+              animationDelay: `${index * 0.2}s`,
+              fontSize: `${Math.random() * 2 + 1}rem`,
+            }}
+          >
+            {skill.icon}
           </div>
         ))}
+      </div>
+      
+      <div className="skills-content">
+        <h2 className="section-title">
+          <span className="title-decorator"></span>
+          Technical Proficiencies
+          <span className="title-decorator"></span>
+        </h2>
+
+        <div className="skills-grid">
+          {skillsData.map((category, index) => (
+            <div className="skill-card" key={index}>
+              <div className="card-header">
+                {category.icon}
+                <h3>{category.category}</h3>
+              </div>
+              <div className="card-body">
+                {category.skills.map((skill, idx) => (
+                  <div className="skill-progress" key={idx}>
+                    <div className="skill-meta">
+                      <span className="skill-icon">{skill.icon}</span>
+                      <span className="skill-name">{skill.name}</span>
+                      <span className="skill-percent">{skill.level}%</span>
+                    </div>
+                    <div className="progress-track">
+                      <div 
+                        className="progress-bar" 
+                        style={{ width: `${skill.level}%` }}
+                      ></div>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
