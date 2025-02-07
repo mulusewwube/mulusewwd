@@ -1,0 +1,231 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  color: #333;
+}
+
+.portfolio-header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  background: transparent;
+  padding: 10px 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo h1 a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1.8rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.logo h1 a:hover {
+  color: #05c4ca;
+}
+
+/* Theme Toggle Button */
+.theme-toggle {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  font-size: 1.2rem;
+  margin-right: 10px;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.theme-toggle:hover {
+  transform: scale(1.1);
+  color: #05c4ca;
+}
+
+/* Hamburger Menu Button */
+.menu-toggle {
+  display: none;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+  width: 30px;
+  height: 30px;
+}
+
+.menu-toggle .menu-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 25px;
+  height: 3px;
+  background: #333;
+  transition: all 0.3s ease;
+  transform: translate(-50%, -50%);
+}
+
+.menu-toggle.open .menu-icon {
+  transform: translate(-50%, -50%) rotate(45deg);
+}
+
+.menu-toggle.open .menu-icon::before,
+.menu-toggle.open .menu-icon::after {
+  transform: rotate(90deg);
+}
+
+.menu-toggle .menu-icon::before,
+.menu-toggle .menu-icon::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #333;
+  transition: transform 0.3s ease;
+}
+
+.menu-toggle .menu-icon::before {
+  transform: translateY(-8px);
+}
+
+.menu-toggle .menu-icon::after {
+  transform: translateY(8px);
+}
+
+/* Navigation Menu */
+.navigation {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navigation ul {
+  display: flex;
+  gap: 20px;
+}
+
+.navigation a {
+  color: #333;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 5px 10px;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+/* Add Bottom Line on Hover */
+.navigation a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: #05c4ca;
+  transition: width 0.3s ease, left 0.3s ease;
+}
+
+.navigation a:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+.navigation a:hover {
+  color: #05c4ca;
+}
+
+/* Mobile Styles */
+@media screen and (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .navigation {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: rgba(255, 255, 255, 0.9);
+    width: 200px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+    padding: 10px 20px;
+    display: none;
+    border-radius: 8px;
+  }
+
+  .navigation.open {
+    display: flex;
+  }
+
+  .navigation ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+/* Magic Design Animation */
+.magic-design {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.magic-design .circle {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float 10s infinite;
+}
+
+.magic-design .circle.one {
+  width: 150px;
+  height: 150px;
+  background: #05c4ca;
+  top: 20%;
+  left: 10%;
+}
+
+.magic-design .circle.two {
+  width: 100px;
+  height: 100px;
+  background: #ffcc00;
+  top: 50%;
+  left: 70%;
+}
+
+.magic-design .circle.three {
+  width: 200px;
+  height: 200px;
+  background: #ff4500;
+  top: 80%;
+  left: 30%;
+}
+
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
