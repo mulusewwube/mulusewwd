@@ -46,11 +46,17 @@ function Projects() {
   ];
 
   return (
-    <section className="projects" id="projects">
-      <div className="section-header">
-        <h2 className="section-title">Featured Projects</h2>
-        <p className="section-subtitle">Discover my latest digital creations</p>
-      </div>
+<section className="projects" id="projects">
+  <div className="section-header">
+    <div className="section-header-wrapper">
+      <span className="title-decorator"></span>
+      <h2 className="section-title">Featured Projects</h2>
+      <span className="title-decorator"></span>
+    </div>
+    <p className="section-subtitle">Discover my latest digital creations</p>
+  </div>
+
+ 
 
       <div className="projects-grid">
         {projectData.map((project, index) => (

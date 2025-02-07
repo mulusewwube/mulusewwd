@@ -1,12 +1,155 @@
-<section className="projects" id="projects">
-  <div className="section-header">
-    <div className="section-header-wrapper">
-      <span className="title-decorator"></span>
-      <h2 className="section-title">Featured Projects</h2>
-      <span className="title-decorator"></span>
-    </div>
-    <p className="section-subtitle">Discover my latest digital creations</p>
-  </div>
+/* Projects Section */
+.projects {
+  padding: 0.5rem 0.5rem;
+ 
+  position: relative;
+  overflow: hidden;
 
-  {/* ... rest of your projects grid ... */}
-</section>
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #000000;
+  margin-bottom: 1rem;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+}
+
+.section-subtitle {
+  font-size: 2rem;
+  color: #2d2d2d;
+  margin-bottom: 2rem;
+  font-weight: 600;
+  text-align: center;
+  position: relative;
+}
+.title-decorator {
+  display: inline-block;
+  width: 40px;
+  height: 2px;
+  background: #05c4ca; /* Main color for decorator */
+  margin: 0 1rem;
+  vertical-align: middle;
+}
+
+/* Projects Grid */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+ 
+}
+
+/* Project Card */
+.project-card {
+  background: #ffffff;
+  border-radius: 6px;
+  overflow: hidden;
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+   border: 2px solid #05c4ca;
+
+}
+
+.project-card:hover {
+  transform: translateY(-10px);
+}
+
+.card-image {
+  height: 220px;
+  background-size: cover;
+  background-position: center;
+  position: relative;
+}
+
+.card-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(180deg, rgba(10, 25, 47, 0.85) 0%, rgba(10, 25, 47, 0.2) 100%);
+  mix-blend-mode: multiply;
+}
+
+/* Card Content */
+.card-content {
+  padding: 2rem;
+}
+
+.content-header {
+  margin-bottom: 1.5rem;
+}
+
+.project-title {
+  color: #05c4ca;
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.project-description {
+  color: #000000;
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+/* Tech Stack */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.tech-tag {
+  background: rgba(100, 255, 218, 0.1);
+  color: #02100d;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 3px;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Project Link */
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #64ffda;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s ease;
+  
+}
+
+.project-link svg {
+  transition: transform 0.3s ease;
+}
+
+.project-link:hover {
+  color: #05c4ca;
+}
+
+.project-link:hover svg {
+  transform: translateX(3px);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .projects {
+    padding: 4rem 1.5rem;
+  }
+
+  .section-title {
+    font-size: 2.2rem;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
