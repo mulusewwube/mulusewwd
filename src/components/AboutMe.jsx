@@ -19,6 +19,10 @@ function AboutMe() {
     return () => clearInterval(interval);
   }, [timelineItems.length]);
 
+  const openResume = () => {
+    window.open("/resume.pdf", "_blank");
+  };
+
   return (
     <section className="about-me" id="about">
       {/* Hero Section */}
@@ -28,7 +32,7 @@ function AboutMe() {
             Hi, I'm <span>Mulusew Wube</span>
           </h1>
           <p className="hero-subtitle">Web Developer | Graphic Designer | UI/UX Enthusiast</p>
-          <button className="cta-button">Resume</button>
+          <button className="cta-button" onClick={openResume}>Resume</button>
         </div>
         <img src={myImage} alt="Profile" className="hero-image" />
       </div>
@@ -59,31 +63,6 @@ function AboutMe() {
                 <p className="timeline-description">{item.description}</p>
               </div>
             ))}
-          </div>
-        </div>
-
-        {/* Skills Section */}
-        <div className="skills-section">
-          <h2 className="section-title">Skills</h2>
-          <div className="skills-grid">
-            <div className="skill">
-              <FaCode className="icon" /> <p>Web Development</p>
-            </div>
-            <div className="skill">
-              <FaPalette className="icon" /> <p>Graphic Design</p>
-            </div>
-            <div className="skill">
-              <FaGraduationCap className="icon" /> <p>UI/UX Design</p>
-            </div>
-            <div className="skill">
-              <FaBriefcase className="icon" /> <p>Project Management</p>
-            </div>
-            <div className="skill">
-              <FaLaptopCode className="icon" /> <p>Problem Solving</p>
-            </div>
-            <div className="skill">
-              <FaStar className="icon" /> <p>Creativity</p>
-            </div>
           </div>
         </div>
       </div>

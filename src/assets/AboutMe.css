@@ -1,3 +1,10 @@
+
+
+
+
+
+
+
 /* AboutMe.css */
 .about-me {
   font-family: 'Poppins', sans-serif;
@@ -234,54 +241,7 @@
   padding: 1rem;
 }
 
-.skill {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.5rem;
-  /* background: #f8fafc; */
-  /* border-radius: 12px; */
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  cursor: default;
-}
-
-.skill:hover {
-  background: #05c4ca;
-  transform: translateY(-5px);
-  /* box-shadow: 0 10px 20px -5px rgba(52, 152, 219, 0.3); */
-}
-
-.skill:hover .icon {
-  color: #fff;
-  transform: scale(1.1);
-}
-
-.icon {
-  font-size: 1.2rem;
-  color:#05c4ca;
-  margin-bottom: 1rem;
-  transition: all 0.3s ease;
-}
-
-.skill p {
-  font-size: 1rem;
-  font-weight: 500;
-  color: #2d3748;
-  margin: 0;
-  transition: color 0.3s ease;
-}
-
-.skill:hover p {
-  color: #fff;
-}
-
-/* ======= Layout Adjustments ======= */
-.content-container {
-  display: flex;
-  gap: 2rem;
-  max-width: 1200px;
-  margin: 0 auto 4rem;
-}
+/*  */
 
 /* ======= Responsive Design ======= */
 @media (max-width: 1024px) {

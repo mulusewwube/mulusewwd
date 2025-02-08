@@ -2,24 +2,24 @@
 .contact {
   font-family: 'Poppins', sans-serif;
   color: #2c3e50;
-  /* background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); */
-  padding: 8rem 1.5rem;
+  padding: 2rem 1.5rem;
   scroll-margin-top: 80px;
   text-align: center;
+
 }
 
 .contact-title-wrapper {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 3rem;
+  margin-bottom: 1rem;
 }
 
 .contact-title {
   font-size: 2.8rem;
   font-size: 2rem;
   color: #2d2d2d;
-  margin-bottom: 2rem;
+  margin-bottom: 1rem;
   font-weight: 600;
   text-align: center;
   position: relative;
@@ -89,7 +89,7 @@
 
 .phone-button:hover,
 .email-button:hover {
-  /* background: #05c4ca; */
+
   color: white;
   transform: translateY(-3px);
   box-shadow: 0 8px 20px rgba(5, 196, 202, 0.2);
@@ -97,7 +97,7 @@
 
 /* Right Column */
 .contact-right {
-  /* background: #ffffff; */
+
   border-radius: 25px;
   padding: 3rem;
   box-shadow: 0 15px 40px rgba(0,0,0,0.08);
@@ -137,8 +137,8 @@ textarea:focus {
 }
 
 .submit-btn {
-  /* background: #05c4ca; */
-  color: white;
+ 
+  color: #05c4ca;
   padding: 1.4rem 2.8rem;
   border: none;
   border-radius: 14px;
@@ -154,7 +154,6 @@ textarea:focus {
 }
 
 .submit-btn:hover {
-  /* background: #048b8f; */
   transform: translateY(-2px);
   box-shadow: 0 8px 25px rgba(5, 196, 202, 0.3);
 }
@@ -214,10 +213,12 @@ textarea:focus {
   min-width: 40px;
 }
 
+.icon{
+  font-size: small;
+}
+
 @keyframes morph {
-  0% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40% }
-  50% { border-radius: 30% 60% 70% 40%/50% 60% 30% 60% }
-  100% { border-radius: 60% 40% 30% 70%/60% 30% 70% 40% }
+
 }
 
 /* Responsive Design */
