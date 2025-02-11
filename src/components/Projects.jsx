@@ -36,7 +36,7 @@ function Projects() {
     {
       title: "BK Business Card",
       description: "BK Business Card is a cutting-edge digital and physical business card service designed to help professionals and businesses leave a lasting impression.",
-      image: "/assets/images/Bk front.png",
+      image: "/assets/images/bk.png",
       link: "#",
       tools: ["Adobe Illustrator"]
     },
