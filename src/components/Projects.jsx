@@ -34,11 +34,11 @@ function Projects() {
       tools: ["JavaScript", "Django", "HTML", "Bootstrap","PostgresSQL"]
     },
     {
-      title: "Union",
-      description: "Personalized support for academic & professional growth.",
-      image: "/assets/images/union.png",
+      title: "BK Business Card",
+      description: "BK Business Card is a cutting-edge digital and physical business card service designed to help professionals and businesses leave a lasting impression.",
+      image: "/assets/images/Bk front.png",
       link: "#",
-      tools: ["Next.js", "Firebase", "Framer Motion", "SCSS"]
+      tools: ["Adobe Illustrator"]
     },
 
 
