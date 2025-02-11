@@ -9,29 +9,29 @@ function Projects() {
       description: "Combines habit tracking and project management.",
       image: "/assets/images/optima.jpg",
       link: "#",
-      tools: ["React", "Node.js", "MongoDB", "Tailwind CSS"]
+      tools: ["React", "Node.js", "Postgres", "CSS"]
     },
     {
       title: "Union",
       description: "Personalized support for academic & professional growth.",
-      image: "/assets/images/union.png",
+      image: "/assets/images/unionnewweeb.png",
       link: "#",
-      tools: ["Next.js", "Firebase", "Framer Motion", "SCSS"]
+      tools: ["JavaScript", "Django", "HTML", "Bootstrap", "PostgresSQL"]
     },
     {
-      title: "Digital Storefront",
-      description: "Sleek e-commerce platform for digital products.",
-      image: "/assets/images/e-commerce.jpg",
+      title: "Medlink",
+      description: "MEDLINK is a leading company specializing in the import and export of high-quality medical equipment and supplies to Ethiopia.",
+      image: "/assets/images/medlinkweb.png",
       link: "#",
-      tools: ["React", "Stripe API", "Cloudinary", "Express"]
+      tools: ["JavaScript", "Django", "HTML", "Bootstrap","PostgresSQL"]
     },
 
     {
-      title: "Optima",
-      description: "Combines habit tracking and project management.",
-      image: "/assets/images/optima.jpg",
+      title: "UTOPIA HOMES",
+      description: "UTOPIA HOMES is a premier home selling, buying, and renting service in Ethiopia, designed to make property transactions seamless and hassle-free.",
+      image: "/assets/images/utopiahomeweb.png",
       link: "#",
-      tools: ["React", "Node.js", "MongoDB", "Tailwind CSS"]
+      tools: ["JavaScript", "Django", "HTML", "Bootstrap","PostgresSQL"]
     },
     {
       title: "Union",
