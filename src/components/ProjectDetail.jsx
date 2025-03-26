@@ -7,7 +7,7 @@ function ProjectDetail() {
   // Here, you can fetch the details of the project based on projectId or use conditional rendering
   return (
     <div>
-      <h2>Project Details: {projectId}</h2>
+      <h2> {projectId}</h2>
       {/* Render project details based on projectId */}
     </div>
   );
