@@ -5,6 +5,11 @@ import myImage from "../assets/images/my-photo.jpg";
 
 function AboutMe() {
   const timelineItems = [
+
+    { 
+      year: "2025", 
+      description: "ERP Implementer at Ashewa Technology successful implementations" 
+    },
     { year: "2024", description: "Earned a Bachelor’s degree in Computer Science" },
     { year: "2023", description: "Completed a certification in web development from Udemy" },
     { year: "2022", description: "Developed graphic design skills using tools like Adobe Illustrator and Figma" },

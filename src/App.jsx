@@ -7,9 +7,6 @@ import Projects from "./components/Projects";
 import Skills from "./components/Skills";
 import Contcat from "./components/Contcat";
 
-// import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-
-import ProjectDetail from "./components/ProjectDetail"; 
 
 
 function App() {
@@ -23,7 +20,7 @@ function App() {
       <Skills />
       <Contcat />
 
-      <ProjectDetail />
+    
         
       </main>
       <Footer />
@@ -31,12 +28,7 @@ function App() {
 
 
 
-      {/* <Router>
-      <Switch>
-        <Route path="/" exact component={Projects} />
-        <Route path="/projects/:projectId" component={ProjectDetail} />
-      </Switch>
-    </Router> */}
+
 
     </>
   );
