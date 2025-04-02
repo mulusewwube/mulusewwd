@@ -1,7 +1,11 @@
 import React, { useState } from "react";
 import { FaUser, FaEnvelope, FaPaperPlane, FaPhoneAlt, FaMapMarkerAlt } from "react-icons/fa";
 import "../assets/Contact.css";
-
+// Import company logos (make sure to add these images to your assets)
+import ashewaLogo from "../assets/images/ashewa-logo.png"; 
+import company2Logo from "../assets/images/bridge.jpeg";
+import company3Logo from "../assets/images/geregera.png";
+import company4Logo from "../assets/images/union.jpg";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,6 +13,15 @@ function Contact() {
     message: "",
   });
 
+  // Add companies data
+  const [companies] = useState([
+    { id: 1, name: "Ashewa Technology", logo: ashewaLogo },
+    { id: 2, name: "Company 2", logo: company2Logo },
+    { id: 3, name: "Company 3", logo: company3Logo },
+    { id: 4, name: "Company 4", logo: company4Logo },
+  ]);
+
+  // Keep existing functions unchanged
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData({
@@ -25,87 +38,26 @@ function Contact() {
 
   return (
     <section className="contact" id="contact">
-      <div className="contact-header">
-      <span className="title-decorator"></span>
-        <h2 className="contact-title">Get in Touch</h2>
-        
-        <p className="contact-subtitle">Let's create something amazing together</p>
-      </div>
+      {/* Existing contact content... */}
 
-      <div className="contact-container">
-        {/* Left Column - Contact Info */}
-        <div className="contact-info">
-          <div className="info-card">
-            <FaPhoneAlt className="info-icon" />
-            <h3>Call Me</h3>
-            <p>+251 988 540 393</p>
-            <p>+251 712 177 404</p>
-          </div>
-
-          <div className="info-card">
-            <FaEnvelope className="info-icon" />
-            <h3>Email Me</h3>
-            <p>mulusewwube0@gmail.com</p>
-          </div>
-
-          <div className="info-card">
-            <FaMapMarkerAlt className="info-icon" />
-            <h3>Location</h3>
-            <p>Addis Ababa, Ethiopia</p>
-          </div>
+      {/* Add this new companies section at the end */}
+      <div className="company-section">
+        <div className="contact-header">
+          <span className="title-decorator"></span>
+          <h2 className="contact-title">Companies I Work With</h2>
+          <p className="contact-subtitle">Proud collaborators and partners</p>
         </div>
-
-        {/* Right Column - Contact Form */}
-        <div className="contact-form-wrapper">
-          <form className="contact-form" onSubmit={handleSubmit}>
-            <div className="form-row">
-              <div className="form-group">
-                <label htmlFor="name">
-                  <FaUser className="icon" /> Name
-                </label>
-                <input
-                  type="text"
-                  id="name"
-                  name="name"
-                  value={formData.name}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
-              
-              <div className="form-group">
-                <label htmlFor="email">
-                  <FaEnvelope className="icon" /> Email
-                </label>
-                <input
-                  type="email"
-                  id="email"
-                  name="email"
-                  value={formData.email}
-                  onChange={handleChange}
-                  required
-                />
-              </div>
+        
+        <div className="company-logos">
+          {companies.map((company) => (
+            <div key={company.id} className="company-logo-container">
+              <img 
+                src={company.logo} 
+                alt={company.name} 
+                className="company-logo"
+              />
             </div>
-
-            <div className="form-group">
-              <label htmlFor="message">
-                <FaPaperPlane className="icon" /> Message
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                value={formData.message}
-                onChange={handleChange}
-                rows="6"
-                required
-              ></textarea>
-            </div>
-
-            <button type="submit" className="submit-btn">
-              Send Message <FaPaperPlane className="icon" />
-            </button>
-          </form>
+          ))}
         </div>
       </div>
     </section>

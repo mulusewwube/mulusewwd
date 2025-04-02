@@ -163,3 +163,85 @@
     padding: 2rem;
   }
 }
+
+
+
+
+/* Companies Section - Modernized */
+.company-section {
+  padding: clamp(3rem, 5vw, 6rem) 1.5rem;
+  text-align: center;
+  background: var(--company-bg, #f8fafc);
+  position: relative;
+}
+
+.company-section__title {
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
+  color: var(--text-dark, #1e293b);
+  margin-bottom: 1.5em;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+}
+
+.company-logos {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3rem);
+  flex-wrap: wrap;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem;
+}
+
+.company-logo-container {
+  width: clamp(120px, 12vw, 160px);
+  height: clamp(60px, 8vw, 80px);
+  display: grid;
+  place-items: center;
+  padding: 0.75rem;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 0.5rem;
+  background: transparent;
+}
+
+.company-logo {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: brightness(1); /* Normal color by default */
+  opacity: 1; /* Full opacity by default */
+  transition: inherit;
+}
+
+/* Hover & Focus States */
+.company-logo-container:hover {
+  background: white;
+  box-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+}
+
+.company-logo-container:hover .company-logo {
+  transform: scale(1.05); /* Keep hover scale effect if desired */
+  filter: brightness(1.05); /* Optional subtle brightness increase */
+}
+
+@media (max-width: 768px) {
+  .company-logos {
+    gap: 1rem;
+    padding: 0.5rem;
+  }
+  
+  .company-logo-container {
+    width: 100px;
+    height: 50px;
+    padding: 0.5rem;
+  }
+}
+
+/* Optional: Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .company-logo-container,
+  .company-logo {
+    transition: none;
+  }
+}
