@@ -1,0 +1,116 @@
+/* Blog Section Styles */
+.blog-section {
+  padding: 5rem 1.5rem;
+  background: #f8f9fa;
+}
+
+.blog-section h2 {
+  font-size: 2.5rem;
+  text-align: center;
+  margin-bottom: 3rem;
+  color: #2c3e50;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.blog-posts {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.blog-post {
+  background: white;
+  border-radius: 15px;
+  margin-bottom: 2rem;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+  transform: translateY(-5px);
+}
+
+.blog-post-content {
+  padding: 2rem;
+}
+
+.key-points {
+  background: #f4f7f9;
+  padding: 1.5rem;
+  border-radius: 10px;
+  margin-top: 1.5rem;
+}
+
+.key-points h4 {
+  color: #3498db;
+  margin-bottom: 1rem;
+}
+
+.tool-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.tool-category {
+  background: #f8f9fa;
+  padding: 1.5rem;
+  border-radius: 10px;
+  border-left: 4px solid #3498db;
+}
+
+.erp-principles {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 2rem;
+  margin: 2rem 0;
+}
+
+.principle {
+  text-align: center;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+}
+
+.principle-icon {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.erp-quote {
+  border-left: 4px solid #3498db;
+  padding: 1.5rem;
+  margin: 2rem 0;
+  background: #f4f7f9;
+  font-style: italic;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .blog-section {
+    padding: 3rem 1rem;
+  }
+  
+  .blog-section h2 {
+    font-size: 2rem;
+  }
+  
+  .tool-grid, .erp-principles {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Impact Section Colors */
+.impact-post {
+  border-top: 4px solid #27ae60;
+}
+
+.tools-post {
+  border-top: 4px solid #2980b9;
+}
+
+.erp-post {
+  border-top: 4px solid #e67e22;
+}
