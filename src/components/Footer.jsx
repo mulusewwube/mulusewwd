@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="footer">
       <p>
         &copy; {new Date().getFullYear()} Mulusew | Designed with 💙 by{" "}
-        <a href="https://github.com" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.linkedin.com/in/mulusew-wube-5b561624a/" target="_blank" rel="noopener noreferrer">
           Mulusew Wube
         </a>
       </p>
