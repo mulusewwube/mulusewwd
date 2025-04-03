@@ -48,7 +48,7 @@ const Blog = () => {
                 <h4>🌐 Web Development</h4>
                 <ul>
                   <li>React (Component Architecture)</li>
-                  <li>Express.js (Backend Framework)</li>
+                  <li>Django (Backend Framework)</li>
                   <li>PWA Techniques (Offline-first)</li>
                 </ul>
               </div>
