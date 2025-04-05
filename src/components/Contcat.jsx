@@ -53,7 +53,7 @@ function Contact() {
               <FaEnvelope className="info-icon" />
               <div>
                 <h3>Email</h3>
-                <p>mulusewwube@gmail.com</p>
+                <p>mulusewwube@gmail.com</p> <br />
                 <p>mulusewwube0@gmail.com</p>
               </div>
             </div>
@@ -61,7 +61,7 @@ function Contact() {
               <FaPhoneAlt className="info-icon" />
               <div>
                 <h3>Phone</h3>
-                <p>+251 988 54 03 93</p>
+                <p>+251 988-54-03-93</p><br />
                 <p>+251 712-17-74-04</p>
               </div>
             </div>
