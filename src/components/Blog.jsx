@@ -1,6 +1,8 @@
 import React from 'react';
 import "../assets/Blog.css";
 
+
+
 const Blog = () => {
   return (
     <section className="blog-section">
